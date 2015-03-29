@@ -1,13 +1,11 @@
 <HTML>
   <HEAD>
-    <TITLE>Logan Ipsum</TITLE>
+    <TITLE>Logan Ipsum<%= title ? " - #{title}" : '' %></TITLE>
     <link rel="stylesheet" href="css/style.css" type="text/css">
   </HEAD>
   <BODY>
     <div id="content">
-      <% paragraph_count.times do %>
-        <p><%= ipsum %></p>
-      <% end %>
+      <%= yield %>
     </div>
   </BODY>
 </HTML>

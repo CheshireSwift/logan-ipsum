@@ -6,8 +6,18 @@ end
 
 get '/logan' do
   paragraph_count = params[:paragraphs].to_i || 1
-  erb :layout , :locals => {
+  ipsum(paragraph_count, :basic_herp)
+end
+
+def ipsum(paragraph_count, output_method)
+  erb :ipsum , :locals => {
     :paragraph_count => [1, paragraph_count].max,
-    :ipsum => 'herp derp logan love jennah'
+    :title => nil,
+    :ipsum => send(output_method)
   }
 end
+
+def basic_herp
+ 'herp derp logan love jennah'
+end
+
