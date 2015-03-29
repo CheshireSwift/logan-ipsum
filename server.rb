@@ -1,6 +1,6 @@
 require 'sinatra'
 
 get '/' do
-  '<p style="font-family:sans-serif">herp derp logan love jennah</p>'
+  erb :layout , :locals => { :ipsum => 'herp derp logan love jennah' }
 end
 
