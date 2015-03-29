@@ -1,6 +1,6 @@
 require 'sinatra'
 
 get '/' do
-  'herp derp logan love jennah'
+  '<p style="font-family:sans-serif">herp derp logan love jennah</p>'
 end
 
