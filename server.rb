@@ -1,6 +1,10 @@
 require 'sinatra'
 
 get '/' do
+  redirect to('/logan')
+end
+
+get '/logan' do
   paragraph_count = params[:paragraphs].to_i || 1
   erb :layout , :locals => {
     :paragraph_count => [1, paragraph_count].max,
