@@ -1,12 +1,17 @@
 require 'sinatra'
 
+methods = {
+  'basic' => :basic_herp
+}
+
 get '/' do
-  redirect to('/logan')
+  erb :index
 end
 
 get '/logan' do
   paragraph_count = params[:paragraphs].to_i || 1
-  ipsum(paragraph_count, :basic_herp)
+  output_method = methods[params[:type]] || :basic_herp
+  ipsum(paragraph_count, output_method)
 end
 
 def ipsum(paragraph_count, output_method)
