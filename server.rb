@@ -10,14 +10,13 @@ get '/logan' do
 end
 
 def ipsum(paragraph_count, output_method)
-  erb :ipsum , :locals => {
-    :paragraph_count => [1, paragraph_count].max,
-    :title => nil,
-    :ipsum => send(output_method)
+  erb :ipsum, locals:  {
+    paragraph_count: [1, paragraph_count].max,
+    title: nil,
+    ipsum: send(output_method)
   }
 end
 
 def basic_herp
- 'herp derp logan love jennah'
+  'herp derp logan love jennah'
 end
-
