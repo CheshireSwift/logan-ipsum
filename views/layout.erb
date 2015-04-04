@@ -1,11 +1,19 @@
 <HTML>
   <HEAD>
-    <TITLE>Logan Ipsum<%= title ? " - #{title}" : '' %></TITLE>
+    <TITLE>Logan Ipsum<%= (title if defined? title) ? " - #{title}" : '' %></TITLE>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </HEAD>
   <BODY>
-    <div id="content">
-      <%= yield %>
+    <div id="all">
+      <div class="page-header">
+        <h1>Logan Ipsum</h1>
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
   </BODY>
 </HTML>
